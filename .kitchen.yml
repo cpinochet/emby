@@ -24,3 +24,11 @@ suites:
       inspec_tests:
         - test/smoke/default
     attributes:
+
+  - name: test
+    run_list:
+      - recipe[embyserver::default]
+    verifier:
+      inspec_tests:
+        - test/smoke/default
+    attributes:
