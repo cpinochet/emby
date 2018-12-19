@@ -40,11 +40,11 @@ end
      package pkg
    end
 
-# # remote file
-# remote_file '/tmp/emby-server-rpm_3.5.0.0_x86_64.rpm' do
-#   source 'https://github.com/MediaBrowser/Emby.Releases/releases/download/3.5.0.0/emby-server-rpm_3.5.0.0_x86_64.rpm'
-#   action :create
-# end
+# remote file
+remote_file '/tmp/emby-server-rpm_3.5.0.0_x86_64.rpm' do
+  source 'https://github.com/MediaBrowser/Emby.Releases/releases/download/3.5.0.0/emby-server-rpm_3.5.0.0_x86_64.rpm'
+  action :create
+end
 
 linea = '172.17.102.164:/var/nfsshare/Videos /media/Videos   nfs defaults 0 0'
 
@@ -58,12 +58,12 @@ end
 #   options 'rw'
 # end
 
-cookbook_file '/tmp/emby-server-rpm_3.5.0.0_x86_64.rpm' do
-  source 'emby-server-rpm_3.5.0.0_x86_64.rpm'
-  mode '0755'
-  owner 'root'
-  group 'root'
-end
+# cookbook_file '/tmp/emby-server-rpm_3.5.0.0_x86_64.rpm' do
+#   source 'emby-server-rpm_3.5.0.0_x86_64.rpm'
+#   mode '0755'
+#   owner 'root'
+#   group 'root'
+# end
 
 # install emby rpm
 package 'emby-server' do
